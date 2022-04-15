@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { logger } from "../../utilities/logger";
 
+//EASY CONSOLE
+/* import { logger } from "../../utilities/logger"; */
+
+//CONSTANTS
+import { picked, navbarItems } from "../../constants/NavbarConstants";
+
+//CSS:STYLED-COMPONENTS
 import { NavContainer, LogoSpan, RightDiv, NavItem } from "./Navbar.styled";
 
 function Navbar() {
-  const navItems = [
-    { name: "HOME", routeName: "home" },
-    { name: "SOFTWARE", routeName: "software" },
-    { name: "BACKGROUND", routeName: "background" },
-    { name: "CONTACT", routeName: "contact" },
-  ];
-
-  const picked = {
-    radius: "0.3rem",
-    color: "#ffc81b",
-    family: "Rubik Moonrocks",
-  };
-
   const [selected, setSelected] = useState("");
 
   return (
@@ -27,20 +20,24 @@ function Navbar() {
       </Link>
 
       <RightDiv>
-        {navItems.map((item, index) => (
+        {navbarItems.map((navbarItem, index) => (
           <Link
             key={index}
-            to={item.routeName}
+            to={navbarItem.routeName}
             style={{ textDecoration: "none" }}
           >
             <NavItem
               className={index}
               onClick={() => {
-                setSelected(item.routeName);
+                setSelected(navbarItem.routeName);
               }}
-              style={{ color: selected === item.routeName ? "pink" : "black" }}
+              style={{
+                color: selected === navbarItem.routeName ? picked.color : "",
+                fontFamily:
+                  selected === navbarItem.routeName ? picked.fontfamily : "",
+              }}
             >
-              {item.name}
+              {navbarItem.name}
             </NavItem>
           </Link>
         ))}

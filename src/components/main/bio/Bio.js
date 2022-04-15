@@ -1,21 +1,26 @@
-import React from 'react'
+import React from "react";
 
-import {BioDiv, ContextDiv, BioImg} from "./Bio.styled"
+//COMPONENTS
+import { images } from "../../../constants/Images";
+import { BioConstants } from "../../../constants/MainPageConstants";
+
+//STYLED-COMPONENTS
+import { BioDiv, ContextDiv, BioImg } from "./Bio.styled";
 
 const Bio = () => {
   return (
     <BioDiv>
-      <BioImg src='https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+      <BioImg src={images.bio} />
       <ContextDiv>
-        <h3>Hasan Cagrı Ozagar</h3>
-        Frontend Developer <br/>
-          Air Traffic Control Officer<br/>
-                    Pilot
-        
-        
+        <h3>{BioConstants.name}</h3>
+        {BioConstants.title1}
+        <br />
+        {BioConstants.title2}
+        <br />
+        {BioConstants.title3}
       </ContextDiv>
     </BioDiv>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

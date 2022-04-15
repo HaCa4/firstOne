@@ -1,40 +1,52 @@
-import React from 'react'
-import {FaGithub, FaLinkedinIn,FaRegEnvelope} from "react-icons/fa"
+import React from "react";
 
-import Map from "./googleMap/Map"
-import GuestForm from "./form/GuestForm"
+//COMPONENTS
+import Map from "./googleMap/Map";
+import GuestForm from "./form/GuestForm";
 
-import {ContactDiv,  LowerDiv, MapPart, MsgPart, LowerLink} from "./Contact.styled"
+//CSS: STYLED-COMPONENTS
+import {
+  ContactDiv,
+  LowerDiv,
+  MapPart,
+  MsgPart,
+  LowerLink,
+} from "./Contact.styled";
 
-
+//ICONS
+import { FaGithub, FaLinkedinIn, FaRegEnvelope } from "react-icons/fa";
 
 function Contact() {
-    
   return (
     <ContactDiv>
-        
-        <LowerDiv>
-            <MsgPart>
-              I WOULD LOVE TO HEAR FROM YOU <br/><br/><br/><br/>
+      <LowerDiv>
+        <MsgPart>
+          I WOULD LOVE TO HEAR FROM YOU <br />
+          <br />
+          <br />
+          <br />
+          <GuestForm />
+        </MsgPart>
+      </LowerDiv>
 
-              <GuestForm/>
-            </MsgPart>          
-        </LowerDiv>
+      <LowerDiv>
+        <h3>
+          You arrive or already live in Izmir?
+          <br />
+          You can also drop by for a coffee!
+        </h3>
+        <MapPart>
+          <Map />
+        </MapPart>
+      </LowerDiv>
 
-        <LowerDiv>
-                <h3>You arrive or already live in Izmir?<br/>You can also drop by for a coffee!</h3>
-            <MapPart>
-                <Map/>   
-            </MapPart>
-        </LowerDiv>
-
-        <LowerLink>
-            <FaGithub/>
-            <FaLinkedinIn/>
-            <FaRegEnvelope/>
-        </LowerLink>
+      <LowerLink>
+        <FaGithub />
+        <FaLinkedinIn />
+        <FaRegEnvelope />
+      </LowerLink>
     </ContactDiv>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
