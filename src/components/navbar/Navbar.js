@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-//EASY CONSOLE
+//DUMMY FUNCTION FOR CONSOLE.LOG()
 /* import { logger } from "../../utilities/logger"; */
 
 //CONSTANTS
@@ -11,7 +11,32 @@ import { picked, navbarItems } from "../../constants/NavbarConstants";
 import { NavContainer, LogoSpan, RightDiv, NavItem } from "./Navbar.styled";
 
 function Navbar() {
+  //STATES
   const [selected, setSelected] = useState("");
+  //HELPER FUNCTIONS
+  const RenderNavbarItems = () => {
+    return navbarItems.map((navbarItem, index) => (
+      <Link
+        key={index}
+        to={navbarItem.routeName}
+        style={{ textDecoration: "none" }}
+      >
+        <NavItem
+          className={index}
+          onClick={() => {
+            setSelected(navbarItem.routeName);
+          }}
+          style={{
+            color: selected === navbarItem.routeName ? picked.color : "",
+            fontFamily:
+              selected === navbarItem.routeName ? picked.fontfamily : "",
+          }}
+        >
+          {navbarItem.name}
+        </NavItem>
+      </Link>
+    ));
+  };
 
   return (
     <NavContainer>
@@ -19,29 +44,7 @@ function Navbar() {
         <LogoSpan> HACA </LogoSpan>
       </Link>
 
-      <RightDiv>
-        {navbarItems.map((navbarItem, index) => (
-          <Link
-            key={index}
-            to={navbarItem.routeName}
-            style={{ textDecoration: "none" }}
-          >
-            <NavItem
-              className={index}
-              onClick={() => {
-                setSelected(navbarItem.routeName);
-              }}
-              style={{
-                color: selected === navbarItem.routeName ? picked.color : "",
-                fontFamily:
-                  selected === navbarItem.routeName ? picked.fontfamily : "",
-              }}
-            >
-              {navbarItem.name}
-            </NavItem>
-          </Link>
-        ))}
-      </RightDiv>
+      <RightDiv>{RenderNavbarItems()}</RightDiv>
     </NavContainer>
   );
 }

@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 //COMPONENTS
 import Navbar from "../navbar/Navbar";
-import MainPage from "../main/MainPage";
+import HomePage from "../homePage/HomePage";
 import Background from "../background/Background";
 import Software from "../software/Software";
 import Contact from "../contact/Contact";
 
 //CSS: STYLED-COMPONENTS
-import { GlobalStyle } from "../styled/Global.styled";
+import { GlobalStyle } from "../globalStyle/Global.styled";
 
 const RouterComponent = () => {
   return (
@@ -18,7 +18,7 @@ const RouterComponent = () => {
 
       <Navbar />
       <Routes>
-        <Route path="/" exact element={<MainPage />} />
+        <Route path="/" exact element={<HomePage />} />
         <Route path="/software" exact element={<Software />} />
         <Route path="/background" exact element={<Background />} />
         <Route path="/contact" exact element={<Contact />} />

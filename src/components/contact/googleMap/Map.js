@@ -4,13 +4,13 @@ import React from "react";
 import { Frame, MapDiv } from "./Map.styled";
 
 //CONSTANTS
-import { images } from "../../../constants/Images";
+import { iframes } from "../../../constants/Iframes";
 
 const Map = () => {
   return (
     <MapDiv>
       <Frame
-        src={images.mapsIframe}
+        src={iframes.googleMapsIframe}
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         title="asd"

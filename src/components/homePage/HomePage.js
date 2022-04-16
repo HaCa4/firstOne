@@ -5,15 +5,16 @@ import Slider from "./slider/Slider";
 import Bio from "./bio/Bio";
 
 //CONSTANTS
-import { SliderData } from "../../constants/MainPageConstants";
+import { SliderData } from "../../constants/HomePageConstants";
 
 //CSS: STYLED-COMPONENTS
-import { MainDiv } from "./Main.styled";
+import { MainDiv } from "./HomePage.styled";
 
 function Main() {
   return (
     <MainDiv>
       <Bio />
+
       <Slider slides={SliderData} />
     </MainDiv>
   );

@@ -1,4 +1,4 @@
-import { images } from "./Images";
+import { images } from "./ImageURLs";
 
 export const BioConstants = {
   name: "Hasan Çağrı Özağar",

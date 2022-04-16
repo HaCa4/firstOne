@@ -7,9 +7,9 @@ import GuestForm from "./form/GuestForm";
 //CSS: STYLED-COMPONENTS
 import {
   ContactDiv,
-  LowerDiv,
+  ContainerDiv,
   MapPart,
-  MsgPart,
+  FormPart,
   LowerLink,
 } from "./Contact.styled";
 
@@ -19,17 +19,18 @@ import { FaGithub, FaLinkedinIn, FaRegEnvelope } from "react-icons/fa";
 function Contact() {
   return (
     <ContactDiv>
-      <LowerDiv>
-        <MsgPart>
-          I WOULD LOVE TO HEAR FROM YOU <br />
+      <ContainerDiv>
+        <FormPart>
+          I WOULD LOVE TO HEAR FROM YOU
+          <br />
           <br />
           <br />
           <br />
           <GuestForm />
-        </MsgPart>
-      </LowerDiv>
+        </FormPart>
+      </ContainerDiv>
 
-      <LowerDiv>
+      <ContainerDiv>
         <h3>
           You arrive or already live in Izmir?
           <br />
@@ -38,7 +39,7 @@ function Contact() {
         <MapPart>
           <Map />
         </MapPart>
-      </LowerDiv>
+      </ContainerDiv>
 
       <LowerLink>
         <FaGithub />

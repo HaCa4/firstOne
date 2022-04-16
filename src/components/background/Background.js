@@ -1,18 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import {MiniDiv, BackDiv} from "./Background.styled";
-
-import Personal from './components/Personal';
-
+//LAST PART, I WILL DECIDE ITS CONTENT TOMORROW
 const Background = () => {
+  return <div>Background</div>;
+};
 
-  return (
-    <BackDiv>
-          <MiniDiv>Education</MiniDiv>
-          <MiniDiv>Career</MiniDiv>
-          <MiniDiv>Personal Life</MiniDiv>      
-    </BackDiv>
-  )
-}
-
-export default Background
+export default Background;

@@ -18,10 +18,12 @@ import {
 import { guestFormInitialValues } from "../../../constants/ContactConstants";
 
 const GuestForm = () => {
+  //STATES
   const [commentsDisplay, setCommentsDisplay] = useState(false);
   const [formValues, setFormValues] = useState(guestFormInitialValues);
   const [userCards, setUserCards] = useState([]);
 
+  //HELPER FUNCTIONS
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -38,6 +40,32 @@ const GuestForm = () => {
     setCommentsDisplay(true);
   };
 
+  const renderUserCardsAfterSubmit = () => {
+    return userCards.map((userCard, idx) => (
+      <UserCard key={idx}>
+        Name:
+        <br /> {userCard.name} <br />
+        <hr />
+        Email:
+        <br /> {userCard.email}
+        <br />
+        <hr />
+        Interested in:
+        <br />
+        {userCard.interest}
+        <br />
+        <hr />
+        Message:
+        <br /> {userCard.post}
+        <br />
+        <hr />
+        Experience:
+        <br /> {userCard.enjoy}
+        <br />
+        <br />
+      </UserCard>
+    ));
+  };
   return (
     <Container>
       <Form onSubmit={handleFormSubmit}>
@@ -95,30 +123,7 @@ const GuestForm = () => {
       </Form>
       <CommentsDiv style={{ display: `${commentsDisplay ? "" : "none"}` }}>
         <h3>Comments from Visitors</h3>
-        {userCards.map((userCard, idx) => (
-          <UserCard key={idx}>
-            Name:
-            <br /> {userCard.name} <br />
-            <hr />
-            Email:
-            <br /> {userCard.email}
-            <br />
-            <hr />
-            Interested in:
-            <br />
-            {userCard.interest}
-            <br />
-            <hr />
-            Message:
-            <br /> {userCard.post}
-            <br />
-            <hr />
-            Experience:
-            <br /> {userCard.enjoy}
-            <br />
-            <br />
-          </UserCard>
-        ))}
+        {renderUserCardsAfterSubmit()}
       </CommentsDiv>
     </Container>
   );
